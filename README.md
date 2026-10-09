@@ -64,5 +64,6 @@ make -C agent-economics-lab reproduce
 - [Semantic grouping with network graphs, US Patent 11,748,453](https://patents.google.com/patent/US11748453B2/en)
 - [Navigating the Complexities of Generative AIs, IBM Research](https://research.ibm.com/publications/navigating-the-complexities-of-generative-ais-ethical-social-and-legal-implications)
 - [Building Retrieval Augmented Generation, UCLA Extension](https://espa.unex.ucla.edu/computer-science/machine-learning-ai/course/building-retrieval-augmented-generation-rag-com-sci)
+- [AI Agent Well-Architected Review, ServiceNow](https://www.servicenow.com/community/s/cgfwn76974/attachments/cgfwn76974/ceg-ai-coe-articles/59/2/ServiceNow_AI_Agents_Well-Architected_Review_v1.pdf) (acknowledged contributor)
 
 San Francisco Bay Area · [gajjar.vyoma@gmail.com](mailto:gajjar.vyoma@gmail.com)

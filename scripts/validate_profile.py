@@ -45,6 +45,7 @@ for receipt in (
     "https://patents.google.com/patent/US11748453B2/en",
     "https://research.ibm.com/publications/navigating-the-complexities-of-generative-ais-ethical-social-and-legal-implications",
     "https://espa.unex.ucla.edu/computer-science/machine-learning-ai/course/building-retrieval-augmented-generation-rag-com-sci",
+    "https://www.servicenow.com/community/s/cgfwn76974/attachments/cgfwn76974/ceg-ai-coe-articles/59/2/ServiceNow_AI_Agents_Well-Architected_Review_v1.pdf",
 ):
     require(receipt, f"missing independent record: {receipt}")
 
