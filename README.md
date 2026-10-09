@@ -1,75 +1,68 @@
 # Vyoma Gajjar
 
-Applied AI research engineer building **economic assurance for AI agents**.
+Applied AI engineer working across predictive machine learning, generative AI,
+and tool-using agent systems.
 
-## Your agent passed its evals. Can you prove it should scale?
+I build the full loop from model behavior to system outcomes: data, modeling,
+retrieval, tools, routing, evaluation, deployment, monitoring, and production
+feedback. I publish the code, evidence, and negative results behind current
+experiments.
 
-I built Agent Economics Lab to connect normalized agent traces with outcome
-quality, human work, remediation and incident cost, a named counterfactual, and
-versioned policy, then issue an auditable `INCOMPLETE`, `SCALE`, `ASSIST`, or `STOP`
-decision.
+[Website](https://vyomagajjar.com/) ·
+[Agent Economics Lab](https://github.com/Vyoma/agent-economics-lab) ·
+[LinkedIn](https://www.linkedin.com/in/vyomagajjar)
 
-## Current open-source work
+## Featured research engineering
 
 ### [Agent Economics Lab](https://github.com/Vyoma/agent-economics-lab)
 
-Python 3.10+. No cloud account. No third-party runtime packages.
+Can an agent decision survive missing evidence, weak graders, and the cost of
+the work it creates?
 
-**Question:** Can deleting a required check silently manufacture `SCALE`?
+This standard-library-only Python project audits whether the evidence around an
+agent supports a decision to expand it, supervise it, or switch it off. It
+combines trace-to-outcome evaluation, full-cost accounting, label-quality
+audits, and reproducible decision records.
 
-**Test:** 98 deterministic synthetic scenarios × 6 single-module evidence
-ablations.
-
-| Deterministic synthetic stress test | Result |
+| Evidence at revision [`135c2be`](https://github.com/Vyoma/agent-economics-lab/tree/135c2be42da15972c40a0d29c3490a40d400f8c8) | Result |
 |---|---:|
-| Scenarios | 98 |
-| Single-module ablations | 588 |
-| Complete non-`SCALE` comparisons | 510 |
-| Unsafe comparator: false `SCALE` | 23 / 510 (4.5%) |
-| Fail-safe engine: false `SCALE` | 0 |
+| [Public agent datasets audited under one protocol](https://github.com/Vyoma/agent-economics-lab/blob/135c2be42da15972c40a0d29c3490a40d400f8c8/research/EVALS.md) | 10 |
+| [Runs carrying both outcome and proxy signals](https://github.com/Vyoma/agent-economics-lab/blob/135c2be42da15972c40a0d29c3490a40d400f8c8/research/FINDINGS.md) | 31,389 |
+| [Controlled required-gate perturbations](https://github.com/Vyoma/agent-economics-lab/blob/135c2be42da15972c40a0d29c3490a40d400f8c8/research/EVALS.md) | 588 |
 
-**Result:** the fail-safe engine returned `INCOMPLETE` whenever required coverage
-was missing. This validates a routing invariant under controlled perturbations. It
-does not estimate production prevalence or validate enterprise policy thresholds.
+These are public-dataset audits and controlled software experiments. They are
+not model rankings, production prevalence estimates, or deployment
+recommendations.
+
+## Reusable decision artifacts
+
+- [One-page scale decision contract](https://github.com/Vyoma/agent-economics-lab/blob/135c2be42da15972c40a0d29c3490a40d400f8c8/templates/agent-scale-decision-contract.md)
+- [Machine-readable decision record template](https://github.com/Vyoma/agent-economics-lab/blob/135c2be42da15972c40a0d29c3490a40d400f8c8/templates/agent-decision-record.template.json)
+- [Filled decision record](https://github.com/Vyoma/agent-economics-lab/blob/135c2be42da15972c40a0d29c3490a40d400f8c8/examples/agent-decision-record.json)
+- [Verifier that replays the decision](https://github.com/Vyoma/agent-economics-lab/blob/135c2be42da15972c40a0d29c3490a40d400f8c8/agent_economics/decision_record.py)
+- [Instrument scorecard with explicit non-claims](https://github.com/Vyoma/agent-economics-lab/blob/135c2be42da15972c40a0d29c3490a40d400f8c8/research/EVALS.md)
+
+Reproduce the pinned snapshot:
 
 ```bash
-make demo
-make modularity
-make reproduce
+git clone https://github.com/Vyoma/agent-economics-lab.git
+git -C agent-economics-lab checkout 135c2be42da15972c40a0d29c3490a40d400f8c8
+make -C agent-economics-lab reproduce
 ```
 
-[Run the lab](https://github.com/Vyoma/agent-economics-lab)
-· [Read the research note](https://github.com/Vyoma/agent-economics-lab/blob/main/research/NOTE.md)
-· [Inspect the protocol](https://github.com/Vyoma/agent-economics-lab/blob/main/research/PROTOCOL.md)
-· [Review the limitations](https://github.com/Vyoma/agent-economics-lab/blob/main/docs/limitations.md)
+## Questions I am working on
 
-## What I am investigating
+- How should predictive models, foundation models, and tool-using agents share
+  a production feedback loop without hiding distinct failure modes?
+- Which changes improve end-to-end behavior: data, model, retrieval, tool
+  interfaces, routing, or control policy?
+- When outcomes and cheap proxies disagree, which claims survive, and where
+  should the system abstain or hand off?
 
-- agent evaluation tied to observable task outcomes;
-- cost per acceptable outcome and named counterfactuals;
-- assurance systems that make missing evidence visibly incomplete;
-- the boundary between diagnostic signals and enforceable controls; and
-- next: authority, provenance, and handoff failures in multi-agent systems.
+## Independent records
 
-## Learn it from first principles
+- [Semantic grouping with network graphs, US Patent 11,748,453](https://patents.google.com/patent/US11748453B2/en)
+- [Navigating the Complexities of Generative AIs, IBM Research](https://research.ibm.com/publications/navigating-the-complexities-of-generative-ais-ethical-social-and-legal-implications)
+- [Building Retrieval Augmented Generation, UCLA Extension](https://espa.unex.ucla.edu/computer-science/machine-learning-ai/course/building-retrieval-augmented-generation-rag-com-sci)
 
-The repository includes five executable lessons that reconstruct full task cost,
-gate on outcomes, compare a counterfactual, bound runaway tasks, and issue an
-assurance decision.
-
-[Start with the lessons](https://github.com/Vyoma/agent-economics-lab/tree/main/lessons)
-
-## Make the claim harder to fake
-
-The most useful contributions to Agent Economics Lab are:
-
-1. fixture-backed offline adapters for real observability and evaluation exports;
-2. versioned domain assurance checks with declared coverage; and
-3. redacted real-world cases that define the task, acceptable outcome, full cost,
-   counterfactual, and pre-committed policy.
-
-[Open a case-study issue](https://github.com/Vyoma/agent-economics-lab/issues)
-
-I welcome agent-evaluation research, architecture collaborations, and technically
-serious advisory conversations. I am also interested in counterexamples that
-narrow or falsify the method.
+San Francisco Bay Area · [gajjar.vyoma@gmail.com](mailto:gajjar.vyoma@gmail.com)
