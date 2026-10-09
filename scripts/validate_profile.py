@@ -6,7 +6,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 README = (ROOT / "README.md").read_text(encoding="utf-8")
-REVISION = "135c2be42da15972c40a0d29c3490a40d400f8c8"
+REVISION = "e18877dddd277fb250e8427af67f33f1f507fc04"
 
 failures: list[str] = []
 
@@ -35,6 +35,9 @@ for path in (
     "templates/agent-decision-record.template.json",
     "examples/agent-decision-record.json",
     "agent_economics/decision_record.py",
+    "templates/production-feedback-contract.template.json",
+    "examples/production-feedback-contract.json",
+    "agent_economics/feedback_contract.py",
 ):
     require(
         f"agent-economics-lab/blob/{REVISION}/{path}",
