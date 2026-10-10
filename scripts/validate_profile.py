@@ -40,6 +40,9 @@ for path in (
     "templates/production-feedback-contract.template.json",
     "examples/production-feedback-contract.json",
     "agent_economics/feedback_contract.py",
+    "docs/novelty.md",
+    "research/HELD_OUT.md",
+    "docs/limitations.md",
 ):
     require(
         f"agent-economics-lab/blob/{REVISION}/{path}",

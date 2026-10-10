@@ -54,6 +54,12 @@ git -C agent-economics-lab checkout e18877dddd277fb250e8427af67f33f1f507fc04
 make -C agent-economics-lab reproduce
 ```
 
+## Research record
+
+- [What survived six failed novelty claims](https://github.com/Vyoma/agent-economics-lab/blob/e18877dddd277fb250e8427af67f33f1f507fc04/docs/novelty.md)
+- [A negative held-out result on code the detector had never seen](https://github.com/Vyoma/agent-economics-lab/blob/e18877dddd277fb250e8427af67f33f1f507fc04/research/HELD_OUT.md)
+- [Known limitations and unresolved measurement problems](https://github.com/Vyoma/agent-economics-lab/blob/e18877dddd277fb250e8427af67f33f1f507fc04/docs/limitations.md)
+
 ## Questions I am working on
 
 - How should predictive models, foundation models, and tool-using agents share
