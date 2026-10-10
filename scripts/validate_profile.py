@@ -6,7 +6,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 README = (ROOT / "README.md").read_text(encoding="utf-8")
-REVISION = "e18877dddd277fb250e8427af67f33f1f507fc04"
+REVISION = "b88875c66f6617e66521b0082c7b193e714ebdaf"
 
 failures: list[str] = []
 
@@ -43,6 +43,7 @@ for path in (
     "docs/novelty.md",
     "research/HELD_OUT.md",
     "docs/limitations.md",
+    "docs/production-feedback-loops.md",
 ):
     require(
         f"agent-economics-lab/blob/{REVISION}/{path}",
