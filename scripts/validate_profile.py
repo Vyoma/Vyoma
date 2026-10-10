@@ -25,6 +25,8 @@ for phrase in (
     "31,389",
     "588",
     "not model rankings, production prevalence estimates, or deployment",
+    "https://vyomagajjar.com/evidence.json",
+    "bounded claim, source class, evidence locator",
 ):
     require(phrase, f"missing required positioning or claim boundary: {phrase}")
 

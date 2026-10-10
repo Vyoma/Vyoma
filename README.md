@@ -10,6 +10,7 @@ experiments.
 
 [Website](https://vyomagajjar.com/) ·
 [Agent Economics Lab](https://github.com/Vyoma/agent-economics-lab) ·
+[Evidence ledger](https://vyomagajjar.com/evidence.json) ·
 [LinkedIn](https://www.linkedin.com/in/vyomagajjar)
 
 ## Featured research engineering
@@ -63,6 +64,9 @@ make -C agent-economics-lab reproduce
   should the system abstain or hand off?
 
 ## Independent records
+
+Each record below is mapped to a bounded claim, source class, evidence locator,
+and verification date in the public [evidence ledger](https://vyomagajjar.com/evidence.json).
 
 - [Semantic grouping with network graphs, US Patent 11,748,453](https://patents.google.com/patent/US11748453B2/en)
 - [Navigating the Complexities of Generative AIs, IBM Research](https://research.ibm.com/publications/navigating-the-complexities-of-generative-ais-ethical-social-and-legal-implications)
