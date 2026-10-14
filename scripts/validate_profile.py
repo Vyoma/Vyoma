@@ -6,7 +6,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 README = (ROOT / "README.md").read_text(encoding="utf-8")
-REVISION = "b88875c66f6617e66521b0082c7b193e714ebdaf"
+REVISION = "6981e84c6a3d23507764f056d54487b6ef03d5ce"
 
 failures: list[str] = []
 
@@ -27,6 +27,8 @@ for phrase in (
     "not model rankings, production prevalence estimates, or deployment",
     "https://vyomagajjar.com/evidence.json",
     "bounded claim, source class, evidence locator",
+    "Generated decision review",
+    "emitted only after verification",
 ):
     require(phrase, f"missing required positioning or claim boundary: {phrase}")
 
@@ -36,6 +38,7 @@ for path in (
     "templates/agent-scale-decision-contract.md",
     "templates/agent-decision-record.template.json",
     "examples/agent-decision-record.json",
+    "examples/agent-decision-record.html",
     "agent_economics/decision_record.py",
     "templates/production-feedback-contract.template.json",
     "examples/production-feedback-contract.json",
