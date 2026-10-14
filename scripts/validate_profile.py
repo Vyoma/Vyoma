@@ -6,7 +6,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 README = (ROOT / "README.md").read_text(encoding="utf-8")
-REVISION = "6981e84c6a3d23507764f056d54487b6ef03d5ce"
+REVISION = "d56e2ffa1dff77dc2985fcc68ec114da0009041c"
 
 failures: list[str] = []
 
