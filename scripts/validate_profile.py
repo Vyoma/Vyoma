@@ -6,7 +6,8 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 README = (ROOT / "README.md").read_text(encoding="utf-8")
-REVISION = "d56e2ffa1dff77dc2985fcc68ec114da0009041c"
+RELEASE = "v0.10.1"
+SOURCE_COMMIT = "4ca8d70c840a85842238a685d7d6c574c67a27b4"
 
 failures: list[str] = []
 
@@ -27,8 +28,12 @@ for phrase in (
     "not model rankings, production prevalence estimates, or deployment",
     "https://vyomagajjar.com/evidence.json",
     "bounded claim, source class, evidence locator",
-    "Generated decision review",
-    "emitted only after verification",
+    "verified generated decision review",
+    "Run the released demonstration without an account or API key",
+    "release checksums",
+    "Predictive ML and GenAI",
+    "Agent systems",
+    "Research practice",
 ):
     require(phrase, f"missing required positioning or claim boundary: {phrase}")
 
@@ -37,21 +42,28 @@ for path in (
     "research/FINDINGS.md",
     "templates/agent-scale-decision-contract.md",
     "templates/agent-decision-record.template.json",
-    "examples/agent-decision-record.json",
     "examples/agent-decision-record.html",
     "agent_economics/decision_record.py",
     "templates/production-feedback-contract.template.json",
     "examples/production-feedback-contract.json",
-    "agent_economics/feedback_contract.py",
+    "docs/corrections.md",
     "docs/novelty.md",
     "research/HELD_OUT.md",
     "docs/limitations.md",
     "docs/production-feedback-loops.md",
 ):
     require(
-        f"agent-economics-lab/blob/{REVISION}/{path}",
+        f"agent-economics-lab/blob/{RELEASE}/{path}",
         f"missing pinned evidence link: {path}",
     )
+
+for release_receipt in (
+    f"agent-economics-lab@{RELEASE} agent-economics demo",
+    f"agent-economics-lab/releases/tag/{RELEASE}",
+    f"agent-economics-lab/releases/download/{RELEASE}/SHA256SUMS",
+    f"agent-economics-lab/tree/{SOURCE_COMMIT}",
+):
+    require(release_receipt, f"missing release receipt: {release_receipt}")
 
 for receipt in (
     "https://patents.google.com/patent/US11748453B2/en",
@@ -62,9 +74,13 @@ for receipt in (
     require(receipt, f"missing independent record: {receipt}")
 
 require(
-    f"git -C agent-economics-lab checkout {REVISION}",
-    "reproduction command is not pinned to the evidence revision",
+    f"git clone --branch {RELEASE} --depth 1 "
+    "https://github.com/Vyoma/agent-economics-lab",
+    "reproduction command is not pinned to the released evidence",
 )
+
+if "d56e2ffa1dff77dc2985fcc68ec114da0009041c" in README:
+    failures.append("profile still points at the superseded pre-release snapshot")
 
 for stale_phrase in (
     "AI Consulting",
