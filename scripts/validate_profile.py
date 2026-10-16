@@ -74,10 +74,13 @@ for receipt in (
     require(receipt, f"missing independent record: {receipt}")
 
 require(
-    f"git clone --branch {RELEASE} --depth 1 "
+    f"git clone --branch {RELEASE} "
     "https://github.com/Vyoma/agent-economics-lab",
     "reproduction command is not pinned to the released evidence",
 )
+
+if re.search(r"--(?:depth|shallow-since|shallow-exclude)\b", README):
+    failures.append("full reproduction requires Git history; do not advertise a shallow clone")
 
 if "d56e2ffa1dff77dc2985fcc68ec114da0009041c" in README:
     failures.append("profile still points at the superseded pre-release snapshot")
