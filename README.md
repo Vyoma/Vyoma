@@ -66,9 +66,13 @@ The compact artifacts are intended for inspection and reuse:
 Reproduce the full released snapshot:
 
 ```bash
-git clone --branch v0.10.1 --depth 1 https://github.com/Vyoma/agent-economics-lab
+git clone --branch v0.10.1 https://github.com/Vyoma/agent-economics-lab
 make -C agent-economics-lab reproduce
 ```
+
+Use Python 3.10 or newer. Keep the full Git history: reproduction checks
+revisit historical commits to verify recorded defects. If `python3` is older,
+pass a supported interpreter, for example `make -C agent-economics-lab PYTHON=python3.12 reproduce`.
 
 ## Research record
 
