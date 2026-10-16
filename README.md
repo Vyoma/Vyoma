@@ -11,6 +11,7 @@ behind current experiments.
 [Website](https://vyomagajjar.com/) ·
 [Agent Economics Lab](https://github.com/Vyoma/agent-economics-lab) ·
 [Evidence ledger](https://vyomagajjar.com/evidence.json) ·
+[Google Scholar](https://scholar.google.com/citations?user=3Ev9Q8cAAAAJ&hl=en) ·
 [LinkedIn](https://www.linkedin.com/in/vyomagajjar)
 
 ## Featured research engineering
